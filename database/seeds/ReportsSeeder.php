@@ -16,7 +16,7 @@ class ReportsSeeder extends Seeder
         $faker = Factory::create();
         $usersCount = DB::table('users')->count();
         
-        $i = 10;
+        $i = 1000;
         while($i > 0) {
             DB::table('reports')->insert([
                 'resource' => $faker->url,

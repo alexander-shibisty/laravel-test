@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@show');
+
+Route::get('/companies', 'CompaniesController@show');
+
+Route::get('/users', 'UsersController@show');
+
+Route::get('/logs', 'ReportsController@showLogs');
+Route::get('/reports', 'ReportsController@showReports');
+

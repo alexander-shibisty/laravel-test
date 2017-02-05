@@ -11,7 +11,7 @@ class UsersSeeder extends Seeder
         $faker = Factory::create();
         $companiesCount = DB::table('companies')->count();
 
-        $i = 10;
+        $i = 100;
         while($i > 0) {
             DB::table('users')->insert([
                 'name' => $faker->name,
