@@ -13,26 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('/users', function (Request $request) {
-    return response()->json([]);
-});
+Route::post('/users', 'Api\UsersApiController@add');
+Route::put('/users/{id}', 'Api\UsersApiController@edit');
+Route::delete('/users/{id}', 'Api\UsersApiController@remove');
 
-Route::put('/users/{id}', function (Request $request) {
-    return response()->json([]);
-});
-
-Route::delete('/users/{id}', function (Request $request) {
-    return response()->json([]);
-});
-
-Route::post('/companies', function (Request $request) {
-    return response()->json([]);
-});
-
-Route::put('/companies/{id}', function (Request $request) {
-    return response()->json([]);
-});
-
-Route::delete('/companies/{id}', function (Request $request) {
-    return response()->json([]);
-});
+Route::post('/companies', 'Api\CompaniesApiController@add');
+Route::put('/companies/{id}', 'Api\CompaniesApiController@edit');
+Route::delete('/companies/{id}', 'Api\CompaniesApiController@remove');

@@ -19,7 +19,7 @@ class CompaniesSeeder extends Seeder
         while($i > 0) {
             DB::table('companies')->insert([
                 'name' => $faker->company,
-                'quota' => rand(1, 100) + (rand(0, 1000) / 1000),
+                'quota' => rand(1, 100),
                 'created_at' => Carbon::today(),
                 'updated_at' => Carbon::now(),
             ]);

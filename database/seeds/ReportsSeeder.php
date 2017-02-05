@@ -20,7 +20,7 @@ class ReportsSeeder extends Seeder
         while($i > 0) {
             DB::table('reports')->insert([
                 'resource' => $faker->url,
-                'transferrend' => rand(1, 20) + (rand(0, 1000) / 1000),
+                'transferrend' => rand(1, 20),
                 'user_id' => rand(1, $usersCount),
                 'created_at' => Carbon::today(),
                 'updated_at' => Carbon::now(),

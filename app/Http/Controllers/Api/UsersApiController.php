@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Company;
+use App\Models\User;
 
-class CompaniesApiController extends Controller {
+class UsersApiController extends Controller {
 
     public function add() {
         return response()->json([]);
