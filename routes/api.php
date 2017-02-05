@@ -13,6 +13,26 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('/users', function (Request $request) {
+    return response()->json([]);
+});
+
+Route::put('/users/{id}', function (Request $request) {
+    return response()->json([]);
+});
+
+Route::delete('/users/{id}', function (Request $request) {
+    return response()->json([]);
+});
+
+Route::post('/companies', function (Request $request) {
+    return response()->json([]);
+});
+
+Route::put('/companies/{id}', function (Request $request) {
+    return response()->json([]);
+});
+
+Route::delete('/companies/{id}', function (Request $request) {
+    return response()->json([]);
 });
