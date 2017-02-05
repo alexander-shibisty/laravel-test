@@ -13,8 +13,8 @@
             <ul class="nav navbar-nav">
                 <li><a href="/companies">Компании</a></li>
                 <li><a href="/users">Пользователи</a></li>
-                <li><a href="/logs">Логи использования</a></li>
-                <li><a href="/reports">Сообщения о привешение</a></li>
+                <li><a href="/logs">Логи</a></li>
+                <li><a href="/reports">Сообщения о превышение</a></li>
             </ul>
         </div>
     </div>

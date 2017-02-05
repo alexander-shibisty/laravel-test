@@ -15,13 +15,15 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($logs as $log)
                 <tr>
-                    <td>1</td>
-                    <td>User</td>
-                    <td>01 Nov 2017 08:40</td>
-                    <td>google.com</td>
-                    <td>1.00 TB</td>
+                    <td>{{ $log->id }}</td>
+                    <td>{{ $log->user }}</td>
+                    <td>{{ $log->updated_at }}</td>
+                    <td>{{ $log->resource }}</td>
+                    <td>{{ $log->transferrend }}</td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

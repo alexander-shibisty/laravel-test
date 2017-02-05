@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Company;
 
 class CompaniesController extends Controller {
 
     public function showList() {
-        return view('pages.companies');
+        $items = Company::get();
+
+        return view('pages.companies', [
+            'items' => $items,
+        ]);
     }
 
     public function editItem(Request $request) {
@@ -16,8 +21,7 @@ class CompaniesController extends Controller {
         return view('pages.formCompany', []);
     }
 
-    public function addItem(Request $request) {
-        $id = $request->id;
+    public function addItem() {
 
         return view('pages.formCompany', []);
     }

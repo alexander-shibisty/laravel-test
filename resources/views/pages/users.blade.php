@@ -1,5 +1,9 @@
 @extends('main')
 
+@section('scripts')
+<script src="/js/companies.js"></script>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="conrainer-wrapper row">
@@ -16,15 +20,18 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($items as $item)
                 <tr>
-                    <td>1</td>
-                    <td>Name</td>
-                    <td>E-mail</td>
-                    <td>Company</td>
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->email }}</td>
+                    <td>{{ $item->company }}</td>
                     <td>
-                        <button type="button" class="btn btn-info" data-id="">
-                            Редактировать
-                        </button>
+                        <a href="/users/{{ $item->id }}">
+                            <button type="button" class="btn btn-info" data-id="">
+                                Редактировать
+                            </button>
+                        </a>
                     </td>
                     <td>
                         <button type="button" class="btn btn-danger" data-id="">
@@ -32,73 +39,12 @@
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Name</td>
-                    <td>E-mail</td>
-                    <td>Company</td>
-                    <td>
-                        <button type="button" class="btn btn-info" data-id="">
-                            Редактировать
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger" data-id="">
-                            Удалить
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Name</td>
-                    <td>E-mail</td>
-                    <td>Company</td>
-                    <td>
-                        <button type="button" class="btn btn-info" data-id="">
-                            Редактировать
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger" data-id="">
-                            Удалить
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Name</td>
-                    <td>E-mail</td>
-                    <td>Company</td>
-                    <td>
-                        <button type="button" class="btn btn-info" data-id="">
-                            Редактировать
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger" data-id="">
-                            Удалить
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Name</td>
-                    <td>E-mail</td>
-                    <td>Company</td>
-                    <td>
-                        <button type="button" class="btn btn-info" data-id="">
-                            Редактировать
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger" data-id="">
-                            Удалить
-                        </button>
-                    </td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
-        <button type="button" class="btn btn-success">Добавить</button>
+        <a href="/users/add">
+            <button type="button" class="btn btn-success">Добавить</button>
+        </a>
     </div>
 </div>
 @endsection

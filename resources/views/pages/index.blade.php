@@ -1,5 +1,9 @@
 @extends('main')
 
+@section('scripts')
+<script src="/js/app.js"></script>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="starter-template">

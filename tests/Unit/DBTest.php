@@ -10,15 +10,19 @@ use DB;
 
 class DBTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
+
     public function testConnect()
     {
         $dbName = DB::connection()->getDatabaseName();
 
         $this->assertTrue($dbName === env('DB_DATABASE'));
+    }
+
+    public function testGetViolation() {
+        $this->assertTrue(false);
+    }
+
+    public function getUsersListWithCompanies() {
+        $this->assertTrue(false);
     }
 }

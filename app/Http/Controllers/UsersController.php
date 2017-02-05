@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UsersController extends Controller {
 
     public function showList() {
-        return view('pages.users');
+        $items = User::getList();
+
+        return view('pages.users', [
+            'items' => $items,
+        ]);
     }
 
     public function editItem(Request $request) {
@@ -16,8 +21,7 @@ class UsersController extends Controller {
         return view('pages.formUser', []);
     }
 
-    public function addItem(Request $request) {
-        $id = $request->id;
+    public function addItem() {
 
         return view('pages.formUser', []);
     }
