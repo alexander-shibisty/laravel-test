@@ -17,8 +17,11 @@ class CompaniesController extends Controller {
 
     public function editItem(Request $request) {
         $id = $request->id;
+        $item = Company::find($id);
 
-        return view('pages.formCompany', []);
+        return view('pages.formCompany', [
+            'item' => $item,
+        ]);
     }
 
     public function addItem() {

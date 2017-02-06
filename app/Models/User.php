@@ -21,11 +21,6 @@ class User extends Model
 
     ];
 
-    public static function getItem($id) {
-        return static::where('id', $id)
-            ->first();
-    }
-
     public static function getList() {
         return static::select('users.*', 'companies.name as company')
             ->leftJoin('companies', 'companies.id', '=', 'users.company_id')

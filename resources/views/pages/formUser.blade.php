@@ -16,19 +16,20 @@
         <form>
             <div class="form-group">
                 <label>Имя</label>
-                <input type="text" class="form-control" name="name" placeholder="Имя">
+                <input type="text" class="form-control" name="name" placeholder="Имя" value="{{ isset($item->name) ? $item->name : '' }}">
             </div>
             <div class="form-group">
                 <label>E-mail</label>
-                <input type="email" class="form-control" name="email" placeholder="E-mail">
+                <input type="email" class="form-control" name="email" placeholder="E-mail" value="{{ isset($item->email) ? $item->email : '' }}">
             </div>
             <div class="form-group">
                 <label>Компания</label>
                 <select name="user_id" class="form-control">
-                    <option value="1">Имя</option>
-                    <option value="1">Имя</option>
-                    <option value="1">Имя</option>
-                    <option value="1">Имя</option>
+                    @foreach($companies as $company)
+                        <option value="{{ $company->id }}" {{ isset($item) && $item->company_id === $company->id ? 'selected' : '' }}>
+                            {{ $company->name }}
+                        </option>
+                    @endforeach
                 </select>
             </div>
             <button type="submit" class="btn btn-success">Отправить</button>

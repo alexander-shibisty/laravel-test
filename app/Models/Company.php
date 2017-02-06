@@ -17,9 +17,4 @@ class Company extends Model
     ];
 
     protected $hidden = [];
-
-    public static function getItem($id) {
-        return static::where('id', $id)
-            ->first();
-    }
 }

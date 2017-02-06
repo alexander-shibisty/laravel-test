@@ -7,16 +7,16 @@ use App\Models\User;
 
 class UsersApiController extends Controller {
 
-    public function add() {
+    public function add(Request $request) {
         return response()->json([]);
     }
 
-    public function edit() {
-        return response()->json([]);
+    public function edit(Request $request) {
+        return response()->json([])->setStatusCode(201);
     }
 
-    public function remove() {
-        return response()->json([]);
+    public function remove(Request $request) {
+        return response()->json([])->setStatusCode(204);
     }
 
 }
