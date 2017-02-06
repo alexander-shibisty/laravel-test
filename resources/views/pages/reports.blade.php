@@ -7,19 +7,19 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>#ID</th>
                     <th>Компания</th>
                     <th>Использует</th>
                     <th>Доступно</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach($logs as $log)
                 <tr>
-                    <td>1</td>
-                    <td>Company</td>
-                    <td>10.00 TB</td>
-                    <td>1.00 TB</td>
+                    <td>{{ $log->name }}</td>
+                    <td>{{ App\Utils\BytesFormat::mbToBytes($log->total . 'MB') }}</td>
+                    <td>{{ App\Utils\BytesFormat::mbToBytes($log->quota . 'MB') }}</td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

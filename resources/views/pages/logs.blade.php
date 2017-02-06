@@ -21,7 +21,7 @@
                     <td>{{ $log->user }}</td>
                     <td>{{ $log->updated_at }}</td>
                     <td>{{ $log->resource }}</td>
-                    <td>{{ $log->transferrend }}</td>
+                    <td>{{ App\Utils\BytesFormat::mbToBytes($log->transferrend . 'MB') }}</td>
                 </tr>
                 @endforeach
             </tbody>

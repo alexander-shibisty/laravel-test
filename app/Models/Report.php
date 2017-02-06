@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Report extends Model
 {
@@ -20,7 +21,17 @@ class Report extends Model
     protected $hidden = [];
 
     public static function getViolation() {
-        
+        return DB::table('companies')
+            ->select(
+                    'companies.quota',
+                    'companies.name', 
+                    DB::raw('SUM(reports.transferrend) as total')
+            )
+            ->join('users', 'companies.id', '=', 'users.company_id')
+            ->join('reports', 'users.id', '=', 'reports.user_id')
+            ->havingRaw('SUM(reports.transferrend) > companies.quota')
+            ->groupBy('companies.id')
+            ->get();
     }
 
     public static function getList() {

@@ -15,7 +15,11 @@ class ReportsController extends Controller {
     }
 
     public function showReports() {
-        return view('pages.reports');
+        $logs = Report::getViolation();
+
+        return view('pages.reports', [
+            'logs' => $logs,
+        ]);
     }
 
 }

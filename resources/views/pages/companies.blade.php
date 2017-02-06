@@ -23,7 +23,7 @@
                 <tr>
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $item->quota }}</td>
+                    <td>{{ App\Utils\BytesFormat::mbToBytes($item->quota . 'MB') }}</td>
                     <td>
                         <a href="/companies/{{ $item->id }}">
                             <button type="button" class="btn btn-info" data-id="">
